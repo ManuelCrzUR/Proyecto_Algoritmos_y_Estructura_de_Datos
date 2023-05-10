@@ -1,1 +1,1 @@
-# Proyecto_Algoritmos_y_Estructura_de_Datos
+# Proyecto Algoritmos y Estructura de Datos
