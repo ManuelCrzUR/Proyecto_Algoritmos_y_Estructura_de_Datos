@@ -22,6 +22,14 @@ El proyecto usa las siguientes dependencias:
   - Tablas Hash
   - Mapas Hash
   - Arboles Binarios
+
+## Información de Contacto:
+
+- Manuel Cruz:
+  manuels.cruz@urosario.edu.co
+  
+- Mariana Sandoval:
+  mariana.sandoval@urosario.edu.co
   
   
   
