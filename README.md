@@ -23,6 +23,9 @@ El proyecto usa las siguientes dependencias:
   - Mapas Hash
   - Arboles Binarios
 
+## Licencia:
+  
+
 ## Información de Contacto:
 
 - Manuel Cruz:
