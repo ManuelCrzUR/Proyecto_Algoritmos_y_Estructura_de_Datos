@@ -10,7 +10,7 @@ Este proyecto se realiza con el objetivo de evidenciar los conocimientos adquiri
 
 Para que el proyecto sea de facíl uso, se implemanta una documentación clara y sin un lenguaje tecnico, asi va a ser de un amplio entendimiento para los usuarios.
 
-## Instalación:
+## Dependencias e Instalación:
 El proyecto usa las siguientes dependencias:
 
   ### Librerias:
