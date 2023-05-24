@@ -38,7 +38,6 @@ void InOrden(NodoAB *raiz){
         InOrden(raiz->sai);
         cout<<raiz->valor;
         InOrden(raiz->sad);
-        cout<<raiz->valor;
     }
 };
 void PosOrden(NodoAB *raiz){
@@ -144,7 +143,7 @@ int main()
             buscar(raiz, x);
             break;
             case 6:
-            sumar(raiz);
+            Sumar(raiz);
             break;
             case 7:
             contar(raiz);
@@ -153,7 +152,7 @@ int main()
             peso(raiz);
             break;
             case 9:
-            camino(raiz);
+            //camino(raiz);
             break;
             case 10:
             hojas(raiz);
@@ -163,4 +162,3 @@ int main()
     }
     return 0;
 }
-
