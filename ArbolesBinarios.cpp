@@ -104,10 +104,10 @@ int menu(){
     cout<<"4-PostOrden\n";
     cout<<"5-Buscar\n";
     cout<<"6.SumarNodoAB\n";
-    cout<<"7.Contar\n";
+    cout<<"7.Contar\n"; // TE NO SIRVE
     cout<<"8.Peso\n";
-    cout<<"9.Camino\n";
-    cout<<"10.Contar hojas\n";
+    cout<<"9.Camino\n";     // NO TA IMPLEMENTADO
+    cout<<"10.Contar hojas\n";  // TE NO SIRVE
     
     cin>>opc;
     
@@ -140,22 +140,22 @@ int main()
             int x;
             cout<<"Ingrese el valor que quiere buscar";
             cin>>x;
-            buscar(raiz, x);
+            cout<<buscar(raiz, x);
             break;
             case 6:
-            Sumar(raiz);
+            cout<<Sumar(raiz);
             break;
             case 7:
-            contar(raiz);
+            cout<<contar(raiz);
             break;
             case 8:
-            peso(raiz);
+            cout<<peso(raiz);
             break;
             case 9:
             //camino(raiz);
             break;
             case 10:
-            hojas(raiz);
+            cout<<hojas(raiz);
             break;
         }
         
