@@ -1,14 +1,27 @@
+//Esta parte de la librería recoge la implementación de un árbol binario y las funciones que se necesitan para su funcionamiento.
+
 #include <iostream>
 
 using namespace std;
 
-class NodoAB{
+//La clase NodoAB, inicializa el nodo o elemento del árbol binario y posee tres atributos:
+    //valor: variable de tipo int, el cual representa el valor numerico de cada Nodo
+    //sai: Es un apuntador a un NodoAB que representa al hijo izquierdo del árbol
+    //sad:Es un apuntador a un NodoAB que representa al hijo derecho del árbol
+    
+class NodoAB{ //Para construir un nodoAB, se utiliza la siguiente sintaxis: NodoAB *nombredelnodo = new NodoAB
 public:
     int valor;
     NodoAB *sai;
     NodoAB *sad;
 };
 
+// La función Insertar, como lo indica su nombre añade un nodoAB al árbol binario. Esta tiene una condición en particular y consiste en que los valores menores a la raíz van en el subárbol izquierdo y los otros en el derecho.
+    //Los Argumentos de la función son:
+        //NodoAB *raiz = Un apuntador a un NodoAB que representa la raiz del árbol
+        //int val = Una variable de tipo int, que indica el valor del nodo que se quiere insertar
+    //¿Que retorna?:
+        //Un apuntador a un NodoAB que representa la raiz del árbol
 NodoAB *insertar(NodoAB *raiz, int val){
     NodoAB *nuevo;
     if(raiz==NULL){
@@ -38,6 +51,7 @@ void InOrden(NodoAB *raiz){
         InOrden(raiz->sai);
         cout<<raiz->valor;
         InOrden(raiz->sad);
+
     }
 };
 void PosOrden(NodoAB *raiz){
@@ -65,100 +79,57 @@ int Sumar(NodoAB *raiz){
     return (raiz->valor)+(Sumar(raiz->sai))+(Sumar(raiz->sad));
 };
 
-int contar(NodoAB *raiz){
+int contar(NodoAB *raiz,int num){
     if(raiz==NULL){
         return 0;
     }
-    if(raiz->valor > 10){
-        return 1+(contar(raiz->sai))+(contar(raiz->sad));
+    if(raiz->valor>num){
+        return 1+ contar(raiz->sai,num)+ contar(raiz->sad,num);
     }
+    return contar(raiz->sai,num)+ contar(raiz->sad,num);
 };
+NodoAB *encontrar_nodo(NodoAB *raiz,int num){
+    if(raiz->valor==num){
+        return raiz;
+    }
+    if(buscar(raiz->sai,num)){
+        return encontrar_nodo(raiz->sai,num);
+    }
+    return encontrar_nodo(raiz->sad,num);
+};
+int camino(NodoAB *raiz,int num1, int num2){
+    if(buscar(raiz,num1)&& buscar(raiz,num2)){
+        NodoAB *p1= encontrar_nodo(raiz,num1), *p2= encontrar_nodo(raiz,num2);
+
+        if(buscar(p1,num2)|| buscar(p2,num1)) {
+            return 1;
+        }
+    }
+    return 0;
+};
+
 int peso(NodoAB *raiz){
     if(raiz==NULL){
         return 0;
     }
     return 1 + (peso(raiz->sai)) + (peso(raiz->sad));
 };
-
 int hojas(NodoAB *raiz){
-    if(raiz==NULL){
+    if (raiz==NULL){
         return 0;
     }
-    if(raiz!=NULL){
-        if(raiz->sai == NULL && raiz->sad==NULL){
-            return 1;
-        }else{
-            return 0;
-        }
+    if(raiz->sai==NULL&&raiz->sad==NULL){
+        return 1;
     }
-    return (hojas(raiz)+(hojas(raiz->sai))+(hojas(raiz->sad)));
-}
+    return hojas(raiz->sai)+ hojas(raiz->sad);
+};
 
 
-
-int menu(){
-    int opc;
-    cout<<"1-Insertar\n";
-    cout<<"2-PreOrden\n";
-    cout<<"3-InOrden\n";
-    cout<<"4-PostOrden\n";
-    cout<<"5-Buscar\n";
-    cout<<"6.SumarNodoAB\n";
-    cout<<"7.Contar\n"; // TE NO SIRVE
-    cout<<"8.Peso\n";
-    cout<<"9.Camino\n";     // NO TA IMPLEMENTADO
-    cout<<"10.Contar hojas\n";  // TE NO SIRVE
-    
-    cin>>opc;
-    
-    return opc;
-}
 
 int main()
 {
-    int opc=0;
-    NodoAB *raiz;
-    while(opc!=10){
-        opc=menu();
-        switch(opc){
-            case 1:
-            int n;
-            cout<<"Ingrese el valor que quiere insertar";
-            cin>>n;
-            raiz=insertar(raiz, n);
-            break;
-            case 2:
-            PreOrden(raiz);
-            break;
-            case 3:
-            InOrden(raiz);
-            break;
-            case 4:
-            PosOrden(raiz);
-            break;
-            case 5:
-            int x;
-            cout<<"Ingrese el valor que quiere buscar";
-            cin>>x;
-            cout<<buscar(raiz, x);
-            break;
-            case 6:
-            cout<<Sumar(raiz);
-            break;
-            case 7:
-            cout<<contar(raiz);
-            break;
-            case 8:
-            cout<<peso(raiz);
-            break;
-            case 9:
-            //camino(raiz);
-            break;
-            case 10:
-            cout<<hojas(raiz);
-            break;
-        }
-        
-    }
+   
+
+    
     return 0;
 }
