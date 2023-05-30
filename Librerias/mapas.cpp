@@ -15,6 +15,10 @@
 
 using namespace std;
 
+/**
+ * @brief La clase Mapa almacena en un privado una estructura de mapa, la cual sirve para alamacenar la información en este apartado. Gracias a lo anterior se puede ejecutar las funciones sin usar parametros inecesarios y hacer el flujo del código mas rapido y eficiente.
+ * 
+ */
 class Mapa {
     private:
         map<string, int> mapa_;
@@ -32,7 +36,7 @@ class Mapa {
          */
         void Insertar(string pClave, int pValor) {
             mapa_[pClave] = pValor;
-        }
+        };
 
         /**
          * @brief Función que devuelve un valor de tipo entero, que se encuentra en una clave del mapa.
@@ -44,7 +48,7 @@ class Mapa {
          */
         int ObtenerValor(string pClave) {
             return mapa_.at(pClave);
-        }
+        };
 
         /**
          * @brief Función que comprueba si una clave existe en un mapa.
@@ -58,7 +62,7 @@ class Mapa {
          */
         bool ExisteClave(string pClave) {
             return mapa_.count(pClave) > 0;
-        }
+        };
 
         /**
          * @brief Función que elimina los elementos en una clave.
@@ -69,7 +73,7 @@ class Mapa {
          */
         void EliminarElemento(string pClave) {
             mapa_.erase(pClave);
-        }
+        };
 
         /**
          * @brief Función que comprueba si un mapa esta vacio.
@@ -81,7 +85,7 @@ class Mapa {
          */
         bool EstaVacio() {
             return mapa_.empty();
-        }
+        };
 
         /**
          * @brief Función que identifica la cantidad de elementos en un mapa.
@@ -93,7 +97,7 @@ class Mapa {
          */
         int ObtenerTamaño() {
             return mapa_.size();
-        }
+        };
 
         /**
          * @brief Función que imprime en la consola el contenido del mapa.
@@ -105,9 +109,5 @@ class Mapa {
             for (auto& entry : mapa_) {
                 cout << entry.first << ": " << entry.second << endl;
             }
-        }
+        };
 };
-
-int main() {
-    return 0;
-}

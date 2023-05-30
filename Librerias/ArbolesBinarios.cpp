@@ -124,12 +124,3 @@ int hojas(NodoAB *raiz){
     return hojas(raiz->sai)+ hojas(raiz->sad);
 };
 
-
-
-int main()
-{
-   
-
-    
-    return 0;
-}
