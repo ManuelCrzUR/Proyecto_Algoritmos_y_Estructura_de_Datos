@@ -16,6 +16,8 @@ El proyecto usa las siguientes dependencias:
   ### Librerias:
   - Vector
   - Map
+  - String
+  - List
   - Iostream
   
   ### Conceptos de Programción:
@@ -23,8 +25,12 @@ El proyecto usa las siguientes dependencias:
   - Mapas Hash
   - Arboles Binarios
 
+  ### Librerias Desarrolladas:
+  - Tenga en cuenta que el objetivo del proyecto es realizar la implementacioń de las estructuras de datos mencionadas, por lo cual para el correcto funcionamiento, debe instalar los archivo que se encuentran en la siguiente carpeta:
+    - Librerias 
+
 ## Licencia:
-  
+  MIT LICENSE
 
 ## Información de Contacto:
 
@@ -33,6 +39,12 @@ El proyecto usa las siguientes dependencias:
   
 - Mariana Sandoval:
   mariana.sandoval@urosario.edu.co
+ 
+## Prueba de las Librerias
+Adjunto, encontrara un archivo main.cpp el cual usa todas las librerias desarrolladas con el fin de dar evidencia del correcto funcionamiento de los código correspondientes. Usted solo necesita descargar el zip del repositorio y ejecutar este archivo para comprobar su funcionamiento.
   
-  
-  
+ 
+## Agradecimientos:
+Agrademeso a la Universidad del Rosario y al docente Ricardo Garzón por permitir el desarrollo de este proyecto en buenas condiciones, asegurando el aprender durante lo largo del curso de "Algoritmos y estructuras de datos" del semestre 2023-1.
+
+Esperamos que este código les sea util para sus proyectos. Gracias.
